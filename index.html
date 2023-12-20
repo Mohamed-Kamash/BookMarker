@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The BookMarks</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="vh-100 shadow-lg p-5 position-relative">
+        <h1 class="specialFont text-center mb-4">
+          <i class="fa-solid fa-bookmark"></i> The Bookmarker
+          <i class="fa-solid fa-bookmark"></i>
+        </h1>
+        <div>
+          <label for="siteName"
+            ><i class="fa-solid fa-book-bookmark"></i> Site Name</label
+          >
+          <input
+            type="text"
+            id="siteName"
+            class="form-control"
+            oninput="validSiteName()"
+          />
+          <small class="text-danger d-none" id="nameMessage"
+            >Name Must Be At Least 3 Letter</small
+          >
+
+          <label for="siteURL"
+            ><i class="fa-solid fa-link mt-4"></i> Site URL</label
+          >
+          <input
+            type="text"
+            id="siteURL"
+            class="form-control"
+            oninput="validSiteURL()"
+          />
+          <small id="message" class="text-danger d-none">
+            URL must start with "https://" example : https://google.com</small
+          >
+
+          <button
+            class="btn btn-primary btn-sm w-100 mt-4 fw-bold"
+            onclick="addNewSite()"
+          >
+            Add New BookMark
+          </button>
+        </div>
+
+        <section>
+          <table class="w-100 text-center my-5 table-bordered">
+            <thead>
+              <th>Index</th>
+              <th>Name</th>
+              <th>Visit</th>
+              <th>Delete</th>
+            </thead>
+            <tbody id="body"></tbody>
+          </table>
+        </section>
+
+        <div
+          id="warningLayer"
+          class="position-absolute top-0 bottom-0 start-0 end-0 bg-black bg-opacity-50 d-none justify-content-center align-items-center"
+        >
+          <div class="h-50 w-50 bg-white p-4 rounded-5">
+            <div
+              id="close"
+              class="d-flex justify-content-end"
+              onclick="closebtn()"
+            >
+              <i class="fa-solid fa-rectangle-xmark text-danger fs-2"></i>
+            </div>
+            <h2 class="fw-bold mb-4">
+              Site Name or Url is not valid, Please follow the rules below :
+            </h2>
+            <h3 class="text-danger">
+              <i class="fa-solid fa-triangle-exclamation"></i> Site name must
+              contain at least 3 characters
+            </h3>
+            <h3 class="text-danger">
+              <i class="fa-solid fa-triangle-exclamation"></i> Site URL must be
+              a valid one <br />
+              <small class="text-success">Ex: https://google.com</small>
+            </h3>
+          </div>
+        </div>
+      </header>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

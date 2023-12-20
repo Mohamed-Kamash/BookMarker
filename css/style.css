@@ -1,0 +1,24 @@
+#close{
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: SpecialFont;
+    src: url(../fonts/Pacifico-Regular.ttf);
+}
+.specialFont{
+    position: relative;
+   font-family: SpecialFont;
+   
+}
+
+.specialFont::after{
+    content: "";
+    width: 40%;
+    height: 5%;
+    background-color: black;
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+}
+
